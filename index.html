@@ -11,6 +11,26 @@
 <body>
     
     <h1>Welcome to Scythe, please select your options:</h1>
+    
+
+        <label for="game">New game name:</label>
+        <input type="text" id="game" name="game"  required>
+
+    <form id="radio">
+        
+            <input type="radio"  name="ranking" value="rated"
+                checked>
+            <label for="rated">Rated game</label>
+        
+            <input type="radio"  name="ranking" value="unrated">
+            <label for="unrated">Unrated game</label>
+        
+
+        
+    </form>
+
+    <h2 id="game-title">Game name:</h2>
+    <h2 id="game-ranking">This game is rated</h2>
 
     <form id="new-player-form">
 
@@ -30,7 +50,7 @@
         </select>
 
         <select name="Mat" id="mat" required>
-            <option value="" disabled selected>Select Player Mat</option>
+            <option value="" disabled selected>Select Player's Mat</option>
             <option value="Industrial">Industrial</option>
             <option value="Innovative">Innovative</option>
             <option value="Engineering">Engineering</option>
@@ -40,17 +60,13 @@
             <option value="Agricultural">Agricultural</option>
         </select>
 
-        <input  class="button" type="submit" value="submit">
+        <input  class="button" type="submit" value="Submit new player">
     </form>
 
     <button id="delete-all">Delete All</button>
 
     <h2>Players list:</h2>
     <ul id="players-list"></ul>
-    <form>
-        <input type="text" id="name" name="name"  required>
-        <input  class="button" type="submit" value="submit">
-
-    </form>
+    
 </body>
 </html>

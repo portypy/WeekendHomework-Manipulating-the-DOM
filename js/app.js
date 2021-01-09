@@ -1,4 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
+
+    const newRadioChange = document.querySelector('#radio');
+    newRadioChange.addEventListener('click', handleRadioChange);
+
+    const newGameInput = document.querySelector('#game');
+    newGameInput.addEventListener('input', handleNewGameInput);
+
     const newPlayerForm = document.querySelector('#new-player-form');
     newPlayerForm.addEventListener('submit', handleNewPlayerFormSubmit);
 
@@ -7,9 +14,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
+const handleRadioChange = function (event) {
+    
+
+    const resultParagraph = document.querySelector('#game-ranking');
+    resultParagraph.textContent = `This game is ${event.target.value}`;
+};
+
+
+const handleNewGameInput = function (event) {
+    event.preventDefault();
+    
+    const resultParagraph = document.querySelector('#game-title');
+    resultParagraph.textContent = `Game name: ${event.target.value}`;
+};
+
+
 const handleNewPlayerFormSubmit = function (event) {
     event.preventDefault();
-    let counter = 1;
 
     const playersListItem = createPlayersListItem(event.target);
     const playersList = document.querySelector('#players-list');
@@ -17,6 +39,7 @@ const handleNewPlayerFormSubmit = function (event) {
     
     event.target.reset();
 };
+
 let counter = 0;
 
 const createPlayersListItem = function (form) {
@@ -50,6 +73,7 @@ const createPlayersListItem = function (form) {
 }
 
 const handleDeleteClick = function (event) {
+    counter = 0;
     const readingList = document.querySelector('#players-list');
     readingList.innerHTML = '';
   }
