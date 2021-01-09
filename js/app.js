@@ -2,8 +2,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const newPlayerForm = document.querySelector('#new-player-form');
     newPlayerForm.addEventListener('submit', handleNewPlayerFormSubmit);
 
-    // const deleteAllButton = document.querySelector('#delete-all');
-    // deleteAllButton.addEventListener('click', handleDeleteClick);
+    const deleteAllButton = document.querySelector('#delete-all');
+    deleteAllButton.addEventListener('click', handleDeleteClick);
 });
 
 const handleNewPlayerFormSubmit = function (event) {
@@ -36,5 +36,8 @@ const createPlayersListItem = function (form) {
     return playersListItem;
 };
 
-
+const handleDeleteClick = function (event) {
+    const readingList = document.querySelector('#players-list');
+    readingList.innerHTML = '';
+  }
 
