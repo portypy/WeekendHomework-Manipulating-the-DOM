@@ -4,24 +4,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const deleteAllButton = document.querySelector('#delete-all');
     deleteAllButton.addEventListener('click', handleDeleteClick);
+
 });
 
 const handleNewPlayerFormSubmit = function (event) {
     event.preventDefault();
-    console.log(this)
+    let counter = 1;
+
     const playersListItem = createPlayersListItem(event.target);
     const playersList = document.querySelector('#players-list');
     playersList.appendChild(playersListItem);
-
+    
     event.target.reset();
 };
+let counter = 0;
 
 const createPlayersListItem = function (form) {
-    const playersListItem = document.createElement('li');
+    counter += 1;
+    if (counter < 3){
+    var playersListItem = document.createElement('li');
     playersListItem.classList.add('players-list-item');
 
     const name = document.createElement('h3');
-    name.textContent = form.name.value;
+    name.textContent = counter + " "  + form.name.value;
     playersListItem.appendChild(name);
 
     const faction = document.createElement('p');
@@ -31,13 +36,20 @@ const createPlayersListItem = function (form) {
     const mat = document.createElement('p');
     mat.textContent = form.mat.value;
     playersListItem.appendChild(mat);
+    
+    } else {
+        var playersListItem = document.createElement('li');
+        playersListItem.classList.add('players-list-item');
 
+        const end = document.createElement('p');
+        end.textContent = "No more players!";
+        playersListItem.appendChild(end)
+    }
 
     return playersListItem;
-};
+}
 
 const handleDeleteClick = function (event) {
     const readingList = document.querySelector('#players-list');
     readingList.innerHTML = '';
   }
-
