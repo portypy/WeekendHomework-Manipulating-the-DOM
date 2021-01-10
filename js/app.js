@@ -15,8 +15,14 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 const handleRadioChange = function (event) {
+    
     const resultParagraph = document.querySelector('#game-ranking');
-    resultParagraph.textContent = `This game is ${event.target.value}`;
+    if (document.querySelector('#rated').checked){
+        resultParagraph.textContent = `This game is rated`;
+    }else{
+        resultParagraph.textContent = `This game is unrated`;
+    };
+    
 };
 
 

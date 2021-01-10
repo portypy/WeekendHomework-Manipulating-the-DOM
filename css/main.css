@@ -1,13 +1,16 @@
 body {
     background:url('images/1920.jpg') ;
     background-size: cover;
+    font: 1rem 'Fira Sans', sans-serif;
 }
 
 #players-list{
+    background:url('images/1921.jpg') ;
+    background-size:cover;
+    background-position: center;
     display: flex;
     flex-direction: column;
     list-style: none;
-    background-color: wheat;
     width: 20%;
     height: 20em;     
     border-radius: 1em;
@@ -16,6 +19,9 @@ body {
 #players-list > li {
     display: flex;
     justify-content: space-around;
+    background-color: rgb(186, 228, 188);
+    border-radius: 1em;
+
 
 }
 .red {
@@ -32,4 +38,5 @@ body {
 }
 .button:active {
 	position:relative;
-	top:1px;
+    top:1px;
+}
