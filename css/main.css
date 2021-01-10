@@ -1,5 +1,35 @@
 body {
     background:url('images/1920.jpg') ;
     background-size: cover;
-  
 }
+
+#players-list{
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    background-color: wheat;
+    width: 20%;
+    height: 20em;     
+    border-radius: 1em;
+    padding: 0%;
+}
+#players-list > li {
+    display: flex;
+    justify-content: space-around;
+
+}
+.red {
+    color:red;
+  }
+
+.button {
+    background-color: rgb(36, 197, 31);
+    border-radius:8px;
+    cursor:pointer; 
+}
+.button:hover {
+	background-color:#FCBF49;
+}
+.button:active {
+	position:relative;
+	top:1px;
